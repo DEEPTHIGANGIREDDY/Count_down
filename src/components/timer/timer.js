@@ -61,10 +61,9 @@ const CountDown = () => {
         setComplete(true);
       };
       const addTime = () => {
-        // setSelect((prevCount) => Math.max(prevCount + 10, 0));
         if (!isRunning) {
             setSelect((prevSelect) => Math.max(prevSelect + 10, 0));
-            setCount(select + 10); // Reset the count to the updated select value
+            setCount(select + 10); 
             setIsRunning(true);
             setComplete(false);
           } else {

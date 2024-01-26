@@ -1,0 +1,31 @@
+.mainCon{
+    border:2px solid silver;
+    padding:18px;
+    border-radius:15px;
+    font-family:cursive
+}
+.divCircle{
+    display:flex;
+       align-items :center;
+        justify-content:center;
+        font-size:30px
+}
+.chaildContainer{
+    display: flex;
+        justify-content: center;
+        margin-top: 20px;
+}
+.buttonstyle{
+    margin: 0 10px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #FAF6FA ;
+        color: #A82798;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-left: 30px;
+        box-shadow: -5px 5px 5px rgba(0 0 0 0.2);
+        width:100px;
+        font-family:cursive
+}

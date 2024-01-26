@@ -1,0 +1,38 @@
+.MainConatiner{
+    text-align: start;
+    margin-top: 10%;
+    color: #A82798;
+    border: 1px transparent #A82798;
+    border-radius: 10px;
+    background-color: #eae1eb;
+    padding: 10px;
+    width:300px;
+
+}
+.ChildContainer{
+    display:flex
+}
+.imgStyle{
+    margin-right: 20px
+}
+.ChaildContainerTwo{
+    color: #A82798;
+    display: flex;
+}
+.contOne{
+    margin-left:-18px
+}
+.para{
+    color: black
+}
+.spanCon{
+    font-size:15px
+}
+.coutTwo{
+        color: #A82798;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-evenly;
+        margin-left:65px;
+        margin-top:65px
+}

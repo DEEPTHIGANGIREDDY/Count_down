@@ -15,17 +15,17 @@
         justify-content: center;
         margin-top: 20px;
 }
-.buttonstyle{
+.buttonstyle {
     margin: 0 10px;
-        padding: 10px;
-        font-size: 16px;
-        background-color: #FAF6FA ;
-        color: #A82798;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        margin-left: 30px;
-        box-shadow: -5px 5px 5px rgba(0 0 0 0.2);
-        width:100px;
-        font-family:cursive
+    padding: 10px;
+    font-size: 16px;
+    background-color: #FAF6FA;
+    color: #A82798;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 30px;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+    width: 100px;
+    font-family: cursive;
 }

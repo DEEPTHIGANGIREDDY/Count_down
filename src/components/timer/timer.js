@@ -15,18 +15,12 @@ const CountDown = () => {
         const displayTime = Math.max(remainingTime, 0);
         return (
           <div className="timer">
-            <div className="value">{handleTimer(displayTime)}</div>
+            <div className="value">{handleTimer(count)}</div>
           </div>
         );
       };
 
-    useEffect(() => {
-        if (count === 0) {
-            setTimerIsRunning(false);
-        }
-    }, [count]);
     const colors = countdownComplete ? ["#DFDEDF", 0.33] : ["#610666", 0.33];
-
       const handleClickToZero = () => {
         setInitialDuration(0);
         setCount(0);
@@ -34,15 +28,38 @@ const CountDown = () => {
         setCountdownComplete(true);
       };
       const handleAddTime = () => {
-        if (!timerIsRunning) {
-            setInitialDuration((previnitialDuration) => Math.max(previnitialDuration + 10, 0));
-            setCount(initialDuration + 10); 
-            setTimerIsRunning(true);
-            setCountdownComplete(false);
-          } else {
-            setInitialDuration((prevCount) => Math.max(prevCount + 10, 0));
-          }
+        // if (!timerIsRunning) {
+        //   setInitialDuration((prevDuration) => Math.max(prevDuration + 10, 0));
+        //   setCount((prevCount) => Math.max((prevCount || 0) + 10, 0));
+          
+        //   setTimerIsRunning(true);
+        //   setCountdownComplete(false);
+        // } else {
+        //   setCount((prevCount) =>( prevCount || 0) + 10);
+        //   setCountdownComplete(false);
+        // }
+        if (count <=100) {
+            setCount(count+10)
+            setTimerIsRunning(true)
+            setCountdownComplete(false)
+            
+        }
+        console.log("hello");
       };
+    useEffect(()=>{
+        let timer=60;
+        if (count) {
+            timer=setTimeout(() => {
+                setCount((prevCount)=>Math.max(prevCount-1,0))
+            }, 1000);
+        }
+        return ()=> clearTimeout(timer)
+    },[count,timerIsRunning])
+    useEffect(()=>{
+        if (count===0) {
+            setTimerIsRunning(false)
+        }
+    },[count])
     return (
         <>
             <div  className="mainCon">
@@ -57,6 +74,7 @@ const CountDown = () => {
                         duration={initialDuration}
                         colors={colors}
                         oncountdownComplete={() => setCountdownComplete(true)}
+                        rotation
                     >
                         {renderTime}
                     </CountdownCircleTimer>

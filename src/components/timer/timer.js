@@ -8,11 +8,13 @@ import './timer.css'
 const CountDown = () => {
     const [initialDuration, setInitialDuration] = useState(60);
     const [count, setCount] = useState(60);
+    const [c,setC]=useState(60);
     const [timerIsRunning, setTimerIsRunning] = useState(true);
     const [countdownComplete, setCountdownComplete] = useState(false);
 
     const renderTime = ({ remainingTime }) => {
         const displayTime = Math.max(remainingTime, 0);
+        setC(displayTime)
         return (
           <div className="timer">
             <div className="value">{handleTimer(count)}</div>
@@ -38,9 +40,9 @@ const CountDown = () => {
         //   setCount((prevCount) =>( prevCount || 0) + 10);
         //   setCountdownComplete(false);
         // }
-        if (count <=100) {
+        if (count <=50) {
             setCount(count+10)
-            setTimerIsRunning(true)
+            // setTimerIsRunning(true)
             setCountdownComplete(false)
             
         }
@@ -71,7 +73,7 @@ const CountDown = () => {
                     <div  className="divCircle">
                     <CountdownCircleTimer
                         isPlaying={timerIsRunning}
-                        duration={initialDuration}
+                        duration={count}
                         colors={colors}
                         oncountdownComplete={() => setCountdownComplete(true)}
                         rotation
